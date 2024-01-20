@@ -1,0 +1,14 @@
+﻿@using LoginReg.Models;
+@using System.Collections.Generic;
+@model List<Category>;
+
+
+@foreach(var i in Model)
+{
+	
+    <form asp-controller="Product" asp-action="Index" method="post">
+        <button type="submit" class="btn btn-primary" name="id" value="@i.Id">@i.Name</button>
+    </form>
+
+
+}

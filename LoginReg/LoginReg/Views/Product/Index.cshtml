@@ -1,0 +1,22 @@
+﻿@using LoginReg.Models;
+@using System.Collections.Generic;
+@model List<Product>;
+
+
+
+
+@foreach (var i in Model)
+{
+
+	<h2>@i.Name</h2>
+	<p>@i.Price</p>
+	@if (User.Identity.IsAuthenticated){
+	<form asp-controller="Cart" asp-action="Add" method="post">
+		<button type="submit" class="btn btn-primary" name="product_id" value="@i.Id">Add To Cart</button>
+	</form>
+	}
+	<hr></hr>
+
+
+
+}
